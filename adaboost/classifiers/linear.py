@@ -5,6 +5,7 @@ import numpy as np
 
 class Linear(Classifier):
     threshold = None
+    min_boundary = 1e-5
 
     def __init__(self, feature):
         Classifier.__init__(self, feature)
@@ -43,6 +44,10 @@ class Linear(Classifier):
         for boundary in self.get_potential_boundaries(processed_data):
             # 0 case taken care of by the initial best_threshold and best_precision
             if 0 == boundary:
+                continue
+
+            # same value (allows linear classifier to work with discrete data)
+            if (lst[boundary][0] - lst[boundary - 1][0]) < self.min_boundary:
                 continue
 
             # advance boundary
