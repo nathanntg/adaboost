@@ -47,7 +47,7 @@ class Linear(Classifier):
                 continue
 
             # same value (allows linear classifier to work with discrete data)
-            if (lst[boundary][0] - lst[boundary - 1][0]) < self.min_boundary:
+            if boundary < len(lst) and (lst[boundary][0] - lst[boundary - 1][0]) < self.min_boundary:
                 continue
 
             # advance boundary
