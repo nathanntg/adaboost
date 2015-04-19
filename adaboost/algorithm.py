@@ -6,25 +6,23 @@ import numpy as np
 
 
 class AdaBoost:
-    debug = 0
-    features = []
-    classifiers = []
-    max_iterations = 5
-    target_error = 0.01
-
-    # data
-    data = None
-    actual = None
-
-    # training weights
-    weights = None
-
-    # trained parameters
-    selected_classifiers = None
-    alphas = None
-
     def __init__(self):
-        pass
+        self.debug = 0
+        self.features = []
+        self.classifiers = []
+        self.max_iterations = 5
+        self.target_error = 0.01
+
+        # data
+        self.data = None
+        self.actual = None
+
+        # training weights
+        self.weights = None
+
+        # trained parameters
+        self.selected_classifiers = None
+        self.alphas = None
 
     def seed_features(self):
         if 0 == len(self.features):

@@ -7,8 +7,6 @@ class Simple(Feature):
     """
     A Simple feature simply extracts a single column from the data matrix.
     """
-    column = None
-
     def __init__(self, column):
         Feature.__init__(self)
         self.column = column

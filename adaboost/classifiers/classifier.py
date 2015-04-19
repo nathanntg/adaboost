@@ -2,10 +2,9 @@ import abc
 
 
 class Classifier:
-    error = None
-    precision = None
-
     def __init__(self, feature):
+        self.error = None
+        self.precision = None
         self.feature = feature
 
     @abc.abstractmethod

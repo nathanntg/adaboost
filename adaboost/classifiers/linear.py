@@ -4,11 +4,11 @@ import numpy as np
 
 
 class Linear(Classifier):
-    threshold = None
     min_boundary = 1e-5
 
     def __init__(self, feature):
         Classifier.__init__(self, feature)
+        self.threshold = None
 
     def get_sort_func(self):
         return None
